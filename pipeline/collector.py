@@ -1,10 +1,10 @@
 import requests
 import time
 import logging
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '..', '.env'))
 
 logging.basicConfig(
     level=logging.INFO,
@@ -18,7 +18,7 @@ if GITHUB_TOKEN and GITHUB_TOKEN != "your_github_personal_access_token_here":
     HEADERS["Authorization"] = f"token {GITHUB_TOKEN}"
 
 
-def fetch_usernames(count=40):
+def fetch_usernames(count=150):
     """Search GitHub for users with 5+ repos in India."""
     usernames = []
     per_page = 30
@@ -41,7 +41,7 @@ def fetch_usernames(count=40):
             logging.error(f"Failed to fetch usernames on page {page}: {e}")
             break
 
-    # TODO: add pagination to fetch beyond 60 results if needed
+    # TODO: add pagination to fetch beyond 150 results if needed
     return usernames[:count]
 
 
@@ -64,7 +64,7 @@ def fetch_profile(username):
         return None
 
 
-def collect_leads(count=40):
+def collect_leads(count=150):
     """Run full collection: search → profiles → raw list of dicts."""
     logging.info("Starting lead collection from GitHub API")
     usernames = fetch_usernames(count)
