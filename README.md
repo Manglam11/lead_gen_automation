@@ -1,4 +1,4 @@
-# Lead Generation Automation
+# 🤖 Lead Generation Automation
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-2.2.2-150458?style=for-the-badge&logo=pandas&logoColor=white)
@@ -12,13 +12,13 @@ A Python automation pipeline that collects developer leads from the GitHub Publi
 
 ---
 
-## Screenshot
+## 📸 Screenshot
 ![ss1.png](assets/ss1.png)
 ![ss2.png](assets/ss2.png)
 
 ---
 
-## What It Does
+## 🔍 What It Does
 
 Hits the GitHub API for Indian developers with 5+ repositories, pulls their profile data, cleans it, generates fallback emails where missing, and saves everything to `data/leads_clean.xlsx` — ready for a sales or outreach team to use directly.
 
@@ -26,7 +26,7 @@ Every run produces a fresh, deduplicated, clean output. No manual steps.
 
 ---
 
-## Project Structure
+## 🗂️ Project Structure
 
 ```
 lead-gen-automation/
@@ -48,7 +48,7 @@ lead-gen-automation/
 
 ---
 
-## Tech Stack
+## ⚙️ Tech Stack
 
 | Library | Version | Purpose |
 |---|---|---|
@@ -60,7 +60,7 @@ lead-gen-automation/
 
 ---
 
-## Setup
+## 🚀 Setup
 
 **1. Clone the repo**
 ```bash
@@ -99,7 +99,7 @@ Output: `data/leads_clean.xlsx`
 
 ---
 
-## Output Format
+## 📊 Output Format
 
 | Column | Description |
 |---|---|
@@ -112,7 +112,7 @@ Output: `data/leads_clean.xlsx`
 
 ---
 
-## Bonus Features
+## ✨ Bonus Features
 
 **Email Generation**
 When a profile has no public email, the script generates a fallback in the format `username@github.com` and tags it as `generated` in the `Email Source` column. Real emails are tagged `real`. The outreach team knows exactly which entries to prioritize.
@@ -128,19 +128,19 @@ start_scheduler()
 
 ---
 
-## Why GitHub API
+## 🔗 Why GitHub API
 
 Free, open, no scraping risk, and returns structured JSON directly. No CAPTCHA, no IP blocks, and it has all four required fields natively. Fits the assignment perfectly without overcomplicating the data source.
 
 ---
 
-## License
+## 📄 License
 
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 
 ---
 
-## Contact
+## 📬 Contact
 
 [![GitHub](https://img.shields.io/badge/GitHub-ManglamS-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Manglam11)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Manglam-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/manglam-dubey/)
