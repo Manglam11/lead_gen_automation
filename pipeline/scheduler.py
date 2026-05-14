@@ -10,9 +10,9 @@ logging.basicConfig(
 
 def run_pipeline():
     """Import here to avoid circular imports at module level."""
-    from collector import collect_leads
-    from cleaner import clean_leads
-    from exporter import export_leads
+    from pipeline.collector import collect_leads
+    from pipeline.cleaner import clean_leads
+    from pipeline.exporter import export_leads
 
     logging.info("Scheduled pipeline started")
     raw_profiles = collect_leads()
