@@ -18,7 +18,7 @@ if GITHUB_TOKEN and GITHUB_TOKEN != "your_github_personal_access_token_here":
     HEADERS["Authorization"] = f"token {GITHUB_TOKEN}"
 
 
-def fetch_usernames(count=150):
+def fetch_usernames(count=40):
     """Search GitHub for users with 5+ repos in India."""
     usernames = []
     per_page = 30
@@ -64,7 +64,7 @@ def fetch_profile(username):
         return None
 
 
-def collect_leads(count=150):
+def collect_leads(count=40):
     """Run full collection: search → profiles → raw list of dicts."""
     logging.info("Starting lead collection from GitHub API")
     usernames = fetch_usernames(count)
