@@ -32,24 +32,22 @@ def clean_leads(raw_profiles):
     df.drop_duplicates(subset=["GitHub Profile"], inplace=True)
     logging.info(f"After removing duplicates: {len(df)}")
 
-    # Strip whitespace from all string fields
     str_columns = ["Name", "Email", "Website", "Location"]
     for col in str_columns:
         df[col] = df[col].apply(
             lambda x: x.strip() if isinstance(x, str) else x
         )
 
-    # Replace empty strings with None so fillna works correctly
     df.replace("", None, inplace=True)
 
-    # Fill missing values
     df["Location"] = df["Location"].fillna("Not Specified")
     df["Website"] = df["Website"].fillna("N/A")
-    df["Name"] = df["Name"].fillna(df["GitHub Profile"].apply(
-        lambda x: extract_username(x) or "Unknown"
-    ))
+    df["Name"] = df["Name"].fillna(
+        df["GitHub Profile"].apply(
+            lambda x: extract_username(x) or "Unknown"
+        )
+    )
 
-    # Bonus Feature A — email generation
     def resolve_email(row):
         if is_valid_email(row["Email"]):
             return row["Email"], "real"
