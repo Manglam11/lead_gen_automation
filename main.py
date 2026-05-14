@@ -11,11 +11,11 @@ def run_pipeline():
     """Collect → Clean → Export. Full lead generation pipeline."""
     logging.info("Pipeline started")
 
-    raw_profiles = collect_leads(count=150)
+    raw_profiles = collect_leads(count=40)
     cleaned_df = clean_leads(raw_profiles)
     export_leads(cleaned_df)
 
-    logging.info("Pipeline finished. Check data/raw/leads_raw.xlsx")
+    logging.info("Pipeline finished. Check data/leads_clean.xlsx")
 
 
 if __name__ == "__main__":
