@@ -12,5 +12,8 @@ venv/
 # OS junk
 .DS_Store
 
-# Output file — regenerated fresh on every run
-output/leads.xlsx
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# PyCharm project files
+.idea/
