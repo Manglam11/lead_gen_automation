@@ -1,7 +1,5 @@
 import logging
-from collector import collect_leads
-from cleaner import clean_leads
-from exporter import export_leads
+from pipeline import collect_leads, clean_leads, export_leads
 
 logging.basicConfig(
     level=logging.INFO,
@@ -13,11 +11,11 @@ def run_pipeline():
     """Collect → Clean → Export. Full lead generation pipeline."""
     logging.info("Pipeline started")
 
-    raw_profiles = collect_leads(count=40)
+    raw_profiles = collect_leads(count=150)
     cleaned_df = clean_leads(raw_profiles)
     export_leads(cleaned_df)
 
-    logging.info("Pipeline finished. Check output/leads.xlsx")
+    logging.info("Pipeline finished. Check data/raw/leads_raw.xlsx")
 
 
 if __name__ == "__main__":
